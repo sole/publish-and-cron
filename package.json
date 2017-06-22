@@ -4,7 +4,10 @@
   "description": "a simple repository to test publishing to github and using travis cron as well",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "publish": "gh-pages -d output",
+    "buildAndPublish": "npm run start && npm run publish"
   },
   "keywords": [
     "travis",
@@ -16,5 +19,14 @@
   "dependencies": {
     "gh-pages": "^1.0.0",
     "moment": "^2.18.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sole/publish-and-cron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sole/publish-and-cron/issues"
+  },
+  "homepage": "https://github.com/sole/publish-and-cron#readme"
 }
