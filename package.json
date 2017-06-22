@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "build": "node index.js",
     "publish": "gh-pages -d output",
-    "buildAndPublish": "npm run start && npm run publish"
+    "start": "npm run build && npm run publish"
   },
   "keywords": [
     "travis",

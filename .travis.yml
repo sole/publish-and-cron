@@ -5,6 +5,8 @@ cache:
         - node_modules
 notifications:
     email: false
+node_js:
+- "7"
 script:
     - npm run build
 after_success:
