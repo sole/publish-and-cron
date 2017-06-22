@@ -1,0 +1,20 @@
+{
+  "name": "publish-and-cron",
+  "version": "1.0.0",
+  "description": "a simple repository to test publishing to github and using travis cron as well",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "travis",
+    "cron",
+    "gh-pages"
+  ],
+  "author": "sole",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gh-pages": "^1.0.0",
+    "moment": "^2.18.1"
+  }
+}
