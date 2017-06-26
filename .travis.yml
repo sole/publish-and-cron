@@ -8,8 +8,8 @@ notifications:
 node_js:
     - '7'
 branches:
-    except:
-        - gh-pages
+    only:
+        - master
 env:
     global:
         - DEPLOY_BRANCH="master"
