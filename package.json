@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node index.js",
-    "publish": "gh-pages -d output",
-    "start": "npm run build && npm run publish"
+	"travis-publish": "gh-pages-travis"
   },
   "keywords": [
     "travis",
@@ -17,7 +16,7 @@
   "author": "sole",
   "license": "Apache-2.0",
   "dependencies": {
-    "gh-pages": "^1.0.0",
+    "gh-pages-travis": "^1.0.4",
     "moment": "^2.18.1"
   },
   "devDependencies": {},

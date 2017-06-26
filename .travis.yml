@@ -1,13 +1,27 @@
 sudo: false
 language: node_js
 cache:
-    directories:
-        - node_modules
+  directories:
+  - node_modules
 notifications:
-    email: false
+  email: false
 node_js:
-- "7"
+- '7'
+branches:
+  except:
+  - gh-pages
+env:
+  global:
+  - DEPLOY_BRANCH="master"
+  - SOURCE_DIR="output"
+  - TARGET_BRANCH="gh-pages"
+  - SSH_KEY="id_rsa"
+  - GIT_NAME="travis"
+  - GIT_EMAIL="deploy@travis-ci.org"
 script:
-    - npm run build
+- npm run build
 after_success:
-    - npm run publish
+- npm run travis-publish
+before_install:
+- openssl aes-256-cbc -K $encrypted_84a4c43d3494_key -iv $encrypted_84a4c43d3494_iv
+  -in id_rsa.enc -out id_rsa -d
