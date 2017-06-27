@@ -19,8 +19,8 @@ Publishes the page to the `gh-pages` branch, also pushes to remote (GitHub). Thi
 * Go to **Repository settings**, make sure *GitHub pages* are enabled, and select the `gh-pages` branch
 * You should be able to access your repo using the address displayed by GitHub (something like `[yourusername].github.io/[repositoryname]`)
 * Enable this repository in Travis, from [your Travis dashboard](https://travis-ci.org/profile). If you don't have one, you'll have to create an account there. If you do, you might need to *Sync account*, so the repository shows up in the list. Then flick the switch on!
-* Generate and set up deploy keys for the repository:
-  * `ssh-keygen -t rsa -C "your_email@example.com"`
+* Generate and set up deploy keys for the repository (run these commands when inside the repo folder):
+  * `ssh-keygen -f id_rsa -t rsa -C "your_email@example.com"`
   * Add the contents of `id_rsa.pub` as a deploy key for your Github repository: in `https://github.com/<your name>/<your repo>/settings/keys` - make sure to allow 'write' access or Travis won't be able to push
   * Install Travis CLI client: `gem install travis`
   * Log into the CLI and encrypt the private key you generated, `id_rsa`:
@@ -32,7 +32,9 @@ Publishes the page to the `gh-pages` branch, also pushes to remote (GitHub). Thi
 
 That should be it!
 
+If you push a commit to GitHub and Travis runs the script successfully and a new version is published on the gh-pages, you should be able to enable Travis' `Cron` from the project settings in Travis. And then the process will be run automatically for you.
 
+**Note** that if you revoke the deploy key in GitHub, then Travis won't be able to push to the repo. You'll need to generate a new one again, encrypt it with the Travis client, and update, commit and publish the `id_rsa.enc` file.
 
 [travis-image]: https://travis-ci.org/sole/publish-and-cron.svg?branch=master
 [travis-url]: https://travis-ci.org/sole/publish-and-cron
